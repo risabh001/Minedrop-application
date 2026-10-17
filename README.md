@@ -13,7 +13,7 @@ The intended host is `https://applications.gamer.dpdns.org`.
 3. In the Cloudflare dashboard, create a Worker named `minedrop-application-portal` or use `npm run worker:deploy` after configuring your account. Attach the custom domain `applications.gamer.dpdns.org` under Worker → Settings → Domains & Routes. Workers custom domains manage DNS/TLS; do not create a separate DNS record pointing at a guessed target.
 4. Add Worker secrets in **Settings → Variables and Secrets**: `SESSION_SECRET` (long random secret), `DISCORD_CLIENT_ID`, `DISCORD_CLIENT_SECRET`, `DISCORD_BOT_TOKEN`, `DISCORD_GUILD_ID`. Set `DISCORD_WEBHOOK_URL` and/or `DISCORD_TICKET_CATEGORY_ID`; for ticket delivery, also set `DISCORD_STAFF_ROLE_ID` (optional). Never commit secret values.
 5. In Discord Developer Portal, add `https://applications.gamer.dpdns.org/api/discord/callback` as an OAuth2 redirect URL. The OAuth scope is `identify`. The bot must be able to inspect guild membership and create/send in the configured ticket category. Webhook URLs should be treated as secrets.
-6. Deploy with `npm run worker:deploy`. The Worker serves the `dist` build through its `ASSETS` binding and handles `/api/discord/login`, `/api/discord/callback`, and `POST /api/applications`.
+6. Deploy with `npx wrangler deploy` (or `npm run worker:deploy`). Wrangler runs `npm run build` first, then deploys the `dist` output through the `ASSETS` binding with Worker handlers for `/api/discord/login`, `/api/discord/callback`, and `POST /api/applications`. The build command must run at the repository root.
 
 For a different domain, change the callback URL in Discord and deployment documentation to match the Worker custom domain; callback URLs are derived from the request origin.
 

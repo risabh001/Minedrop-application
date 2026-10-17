@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "worker:dev": "npm run build && wrangler dev",
-    "worker:deploy": "npm run build && wrangler deploy"
+    "worker:deploy": "wrangler deploy"
   },
   "dependencies": {
     "jspdf": "^4.2.1",
