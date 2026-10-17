@@ -42,7 +42,7 @@ export function getSessionUser() {
 }
 
 export function getDiscordLoginUrl() {
-  return '/.netlify/functions/discord-login-start';
+  return '/api/discord/login';
 }
 
 export function logout() {

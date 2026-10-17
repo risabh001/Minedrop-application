@@ -1,0 +1,13 @@
+name = "minedrop-application-portal"
+main = "worker.js"
+compatibility_date = "2026-10-17"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+[vars]
+# Set DISCORD_REDIRECT_URI in the Discord Developer Portal to:
+# https://applications.gamer.dpdns.org/api/discord/callback
