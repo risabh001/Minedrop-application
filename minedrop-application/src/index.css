@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink-950 text-ink-100 font-sans antialiased bg-portal-glow;
+  background-attachment: fixed;
+}
+
+:focus-visible {
+  outline: 2px solid theme('colors.drop.400');
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-ink-900 border border-ink-700 rounded-xl shadow-panel;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-drop-500 text-ink-950 font-semibold px-6 py-3
+           hover:bg-drop-400 active:scale-[0.98] transition-all duration-150
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-ink-800 border border-ink-600 text-ink-100 font-semibold px-6 py-3
+           hover:bg-ink-700 active:scale-[0.98] transition-all duration-150
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .field-input {
+    @apply w-full bg-ink-950 border border-ink-600 rounded-lg px-4 py-3 text-ink-100 placeholder-ink-400
+           focus:border-drop-400 outline-none transition-colors;
+  }
+
+  .field-label {
+    @apply block text-sm font-semibold text-ink-200 mb-2;
+  }
+
+  .field-help {
+    @apply text-xs text-ink-400 mt-1.5;
+  }
+
+  .field-error {
+    @apply text-signal-500 text-sm mt-1.5;
+  }
+
+  .option-row {
+    @apply flex items-start gap-3 rounded-lg border border-ink-600 px-4 py-3 cursor-pointer
+           hover:border-drop-400 transition-colors;
+  }
+
+  .option-row-selected {
+    @apply border-drop-400 bg-drop-500/10;
+  }
+}
