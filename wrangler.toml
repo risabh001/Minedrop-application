@@ -16,8 +16,8 @@ not_found_handling = "single-page-application"
 APP_ORIGIN = "https://applications.gamer.dpdns.org"
 
 # Configure these as encrypted Worker secrets in Cloudflare (do not put values here):
-SESSION_SECRET, DISCORD_CLIENT_ID, DISCORD_CLIENT_SECRET, DISCORD_BOT_TOKEN,
- DISCORD_GUILD_ID, DISCORD_WEBHOOK_URL, DISCORD_TICKET_CATEGORY_ID (optional),
+# SESSION_SECRET, DISCORD_CLIENT_ID, DISCORD_CLIENT_SECRET, DISCORD_BOT_TOKEN,
+ # DISCORD_GUILD_ID, DISCORD_WEBHOOK_URL, DISCORD_TICKET_CATEGORY_ID (optional),
 # DISCORD_STAFF_ROLE_ID (optional).
 # 
-Discord OAuth redirect URL: https://applications.gamer.dpdns.org/api/discord/callback
+# Discord OAuth redirect URL: https://applications.gamer.dpdns.org/api/discord/callback
